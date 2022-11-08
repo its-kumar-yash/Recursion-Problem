@@ -18,6 +18,28 @@ int firstOccurence(vector<int> arr, int idx, int target){
 
 }
 
+
+int lastOccurence(vector<int> arr, int idx, int target){
+
+    if(idx > arr.size()){
+        return -1;
+    }
+
+    int liisa = lastOccurence(arr, idx + 1, target);
+    if(liisa == -1){
+        if(arr[idx] == target){
+            return idx;
+        }
+        else{
+            return -1; 
+        }
+    }
+    else{
+        return liisa;
+    }
+}
+
+
 int main(){
     
 
